@@ -1,16 +1,67 @@
-import React from "react";
-import * as d3 from "d3";
+import React, { useMemo } from "react";
 
-const AxisBottom = ({ scale }) => {
+export const AxisTop = ({ xScale, innerHeight, tickFormat, isLog = true }) => {
+  const ticks = useMemo(() => {
+    return xScale.ticks(6).map((value) => ({
+      value,
+      xOffset: xScale(value),
+    }));
+  }, [xScale]);
+
   return (
-    <g transform={`translate(0, ${scale.range()[1]})`} className="x-axis">
-      {scale.ticks().map((tick) => (
-        <text key={tick} x={scale(tick)} y={6} dy=".32em" textAnchor="middle">
-          {tick}
-        </text>
-      ))}
+    <g>
+      {/* Axis line */}
+      <line
+        x1={xScale.range()[0]}
+        x2={xScale.range()[1]}
+        y1={0}
+        y2={0}
+        stroke="#636363"
+        strokeWidth={1}
+      />
+
+      {ticks.map(({ value, xOffset }) => {
+        const isMajor = isLog ? Number.isInteger(Math.log10(value)) : true;
+        const tickOpacity = isMajor ? 1 : 0.8;
+        const labelOpacity = isMajor ? 1 : 0.0;
+
+        return (
+          <g key={value} transform={`translate(${xOffset}, 0)`}>
+            {/* Tick mark */}
+            <line
+              y1={0}
+              y2={-6}
+              stroke="#636363"
+              strokeWidth={1}
+              opacity={tickOpacity}
+            />
+
+            {/* Grid line */}
+            <line
+              y1={0}
+              y2={innerHeight}
+              stroke="#e0e0e0"
+              strokeWidth={1}
+              strokeDasharray="4,4"
+              opacity={tickOpacity}
+            />
+
+            {/* Tick label */}
+            <text
+              y={-12}
+              textAnchor="middle"
+              style={{
+                fontSize: "11px",
+                fontFamily: "sans-serif",
+                fill: "#636363",
+                opacity: labelOpacity,
+              }}
+            >
+              {tickFormat ? tickFormat(value) : value}
+            </text>
+          </g>
+        );
+      })}
     </g>
   );
 };
-
-export default AxisBottom;
