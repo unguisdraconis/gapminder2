@@ -90,7 +90,7 @@ const BubblePlot = ({ scaleType = "log" }) => {
       {/* Chart subtitle */}
       <text
         x={width / 2}
-        y={20}
+        y={10}
         textAnchor="middle"
         style={{ fontSize: "14px", fontWeight: 600, fill: "#333" }}
       >
@@ -110,7 +110,7 @@ const BubblePlot = ({ scaleType = "log" }) => {
         {/* X-axis label (top) */}
         <text
           x={innerWidth / 2}
-          y={-40}
+          y={-30}
           textAnchor="middle"
           style={{ fontSize: "11px", fill: "#333", fontWeight: 500 }}
         >
