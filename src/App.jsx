@@ -39,9 +39,9 @@ function App() {
         indicators, such as life expectancy, GDP per capita, and population size
         across various countries and regions. The logarithmic scale (left)
         effectively manages the wide range of GDP values, allowing for clearer
-        comparisons between nations. The linear scale (right) shows the same
-        data without transformation, revealing the nations occupying the upper
-        range.
+        comparisons between nations with widely disparate GDPs. The linear scale
+        (right) shows the same data without transformation, revealing the
+        nations occupying the upper range.
       </p>
 
       {/* Side-by-side charts */}
