@@ -19,6 +19,7 @@ const innerWidth = width - margin.left - margin.right;
 const innerHeight = height - margin.top - margin.bottom;
 
 // ---------- Continent color palette ----------
+// Okabe-Ito pallete
 const continentColors = {
   Africa: "#E69F00",
   Americas: "#009E73",

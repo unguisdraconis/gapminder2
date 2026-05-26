@@ -66,9 +66,9 @@ function App() {
           marginTop: "16px",
         }}
       >
-        Source: Based on free material from GAPMINDER.ORG, CC-BY LICENSE |
-        Visualization by Jeremiah King as part of D3 Loves React course taught
-        by Yan Holtz
+        Source: World Bank material from GAPMINDER.ORG, CC-BY LICENSE |
+        Scaffolding by Claude Opus 4.6 | Visualization by Jeremiah King as part
+        of D3 Loves React course taught by Yan Holtz
       </p>
     </div>
   );
