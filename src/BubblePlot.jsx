@@ -91,7 +91,7 @@ const BubblePlot = ({ scaleType = "log" }) => {
       {/* Chart subtitle */}
       <text
         x={width / 2}
-        y={10}
+        y={500}
         textAnchor="middle"
         style={{ fontSize: "14px", fontWeight: 600, fill: "#333" }}
       >

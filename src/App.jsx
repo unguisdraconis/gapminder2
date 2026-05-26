@@ -40,7 +40,7 @@ function App() {
         across various countries and regions. The logarithmic scale (left)
         effectively manages the wide range of GDP values, allowing for clearer
         comparisons between nations with widely disparate GDPs. The linear scale
-        (right) shows the same data without transformation, revealing the
+        (right) shows the same data without transformation, more clearly revealing the
         nations occupying the upper range.
       </p>
 
