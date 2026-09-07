@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import { useMemo } from "react";
 
 export const AxisTop = ({ xScale, innerHeight, tickFormat, isLog = true }) => {
   const ticks = useMemo(() => {
