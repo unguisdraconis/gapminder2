@@ -60,8 +60,8 @@ function App() {
       <p
         style={{
           textAlign: "center",
-          fontSize: "10px",
-          color: "#999",
+          fontSize: "12px",
+          color: "#666",
           marginTop: "16px",
         }}
       >

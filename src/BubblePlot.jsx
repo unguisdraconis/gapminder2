@@ -38,6 +38,9 @@ const xTickFormat = (d) => {
 
 const BubblePlot = ({ scaleType = "log" }) => {
   const isLog = scaleType === "log";
+  const scaleLabel = isLog ? "logarithmic" : "linear";
+  const titleId = `gapminder-${scaleLabel}-title`;
+  const descriptionId = `gapminder-${scaleLabel}-description`;
 
   // Build scales using D3
   const xScale = useMemo(
@@ -86,8 +89,17 @@ const BubblePlot = ({ scaleType = "log" }) => {
     <svg
       width={width}
       height={height}
+      role="img"
+      aria-labelledby={`${titleId} ${descriptionId}`}
       style={{ fontFamily: "sans-serif", background: "#fafafa" }}
     >
+      <title id={titleId}>
+        {`Gapminder bubble plot with a ${scaleLabel} GDP scale`}
+      </title>
+      <desc id={descriptionId}>
+        {`Bubble plot of the same course-provided Gapminder dataset. GDP per capita is on a ${scaleLabel} x-axis, life expectancy is on the y-axis, population is represented by bubble size, and continent is represented by color.`}
+      </desc>
+
       {/* Chart subtitle */}
       <text
         x={width / 2}
