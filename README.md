@@ -8,6 +8,8 @@ This D3 Loves React learning exercise compares two simultaneous views of the sam
 
 [View the visualization](https://unguisdraconis.github.io/gapminder2/)
 
+![Two simultaneous views of the same Gapminder dataset: one with a logarithmic GDP scale and one with a linear GDP scale.](docs/images/gapminder2.png)
+
 ## Why two charts?
 
 An earlier `gapminder` exercise used a logarithmic GDP scale. After that implementation was functional, Jeremiah recognized that the linear representation also communicated useful information. Because `gapminder2` was intended as a static visualization, both versions are shown simultaneously rather than hidden behind an interactive toggle.
